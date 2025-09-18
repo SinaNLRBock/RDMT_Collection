@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "RDMT Collection"
   text: "RDMTraining4NFDI Collection"
-  tagline: My great project tagline
+  tagline:
   actions:
     - theme: brand
       text: Markdown Examples
@@ -13,6 +13,9 @@ hero:
     - theme: alt
       text: API Examples
       link: /api-examples
+    - theme: alt
+      text: JS Table
+      link: /js-table
 
 features:
   - title: Feature A
