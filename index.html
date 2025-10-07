@@ -5,20 +5,42 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://bossanova.uk/jspreadsheet/v4/jspreadsheet.js"></script>
-  <link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jspreadsheet.css" type="text/css" />
+
+  <script src="https://bossanova.uk/jspreadsheet/v5/jspreadsheet.js"></script>
   <script src="https://jsuites.net/v5/jsuites.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+  <link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v5/jspreadsheet.css" type="text/css" />
   <link rel="stylesheet" href="https://jsuites.net/v5/jsuites.css" type="text/css" />
+  
+  <!-- neu -->
+
+
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" />
   <title>RDMT Collection</title>
 </head>
 
 <body>
   <!-- <div id="app"></div>
     <script type="module" src="/src/main.js"></script> -->
-  <div id="spreadsheet"></div>
+  <div><p>RDMt Collection</p></div>
+  <div id="spreadsheet1"></div>
+
+
+  
   <script>
-    var data = [
+  // Create your spreadsheets
+  jspreadsheet.setDictionary({
+    'No records found': 'Keine Einträge gefunden',
+    'Show': 'Anzeigen',
+    //...
+});
+
+  jspreadsheet(document.getElementById('spreadsheet1'), {
+    toolbar: true,
+    worksheets: [
+        {
+            data: [
   {
     "LZM_Index": "Access control",
     "Title_Unit": "DSMZ Digital Diversity: How to efficiently access the data of BacDive, BRENDA, LPSN, SILVA and more",
@@ -3315,69 +3337,11 @@
     "PID_URL": "NN",
     "Consortia": "NFDI4Microbiota"
   }
-];
-
-    jspreadsheet(document.getElementById('spreadsheet'), {
-      data: data,
-      columns: [
-        {
-          type: 'text',
-          title: 'LZM_Index'
+]
         },
-        {
-          type: 'text',
-          title: 'Title_Unit',
-        },
-        {
-          type: 'text',
-          title: 'Course_Formats'
-        },
-        {
-          type: 'text',
-          title: 'Language'
-        },
-        {
-          type: 'text',
-          title: 'Date'
-        },
-        {
-          type: 'text',
-          title: 'Version'
-        },
-        {
-          type: 'text',
-          title: 'License'
-        },
-        {
-          type: 'text',
-          title: 'RDMT_Profiency_Level'
-        },
-        {
-          type: 'text',
-          title: 'Target_group_as_stated'
-        },
-        {
-          type: 'text',
-          title: 'LZM_Learning_Objective'
-        },
-        {
-          type: 'text',
-          title: 'Learning_Objective_as_stated'
-        },
-        {
-          type: 'text',
-          title: 'Learning_Ressource'
-        },
-        {
-          type: 'text',
-          title: 'PID_URL'
-        },
-                {
-          type: 'text',
-          title: 'Consortia'
-        }
-      ]
-    });
+        // More worksheets
+    ]
+  });
   </script>
 </body>
 
