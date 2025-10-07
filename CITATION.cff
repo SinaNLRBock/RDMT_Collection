@@ -6,20 +6,9 @@ authors:
   orcid: "https://orcid.org/0000-0001-6754-8810"
 - family-names: "RDMTraining4NFDI"
   given-names: "Base4NFDI"
-
-title: "RDMTraining4NFDI collection of training materials. UseCase consortia 2025."
+title: RDMTraining4NFDI collection of training materials. UseCase consortia 2025.
 version: 0.0.1
-date-released: 2025-10-10
+date-released: "2025-10-10"
 url: "https://base4nfdi.de/projects/rdmtraining4nfdi"
 url: "https://zenodo.org/communities/rdmt4nfdi/records?q=&l=list&p=1&s=10&sort=newest"
 
-@data{RDMTraining4NFDI Collection,
-  author = {Sina, Bock and RDMTraining4NFDI},
-  title = {{RDMTraining4NFDI Collection of training materials. UseCase consortia 2025.}},
-  url = {https://github.com/github-linguist/linguist},
-  version = {0.0.1},
-  year = {2025}
-}
-
- # doi = {10.5281/zenodo.1234}
- # doi: 10.5281/zenodo.16927331
