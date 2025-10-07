@@ -17,20 +17,34 @@
 <body>
   <!-- <div id="app"></div>
     <script type="module" src="/src/main.js"></script> -->
-  <div><p>RDMt Collection</p></div>
+  <div>
+    <p>RDMt Collection</p>
+  </div>
+  <!-- Sort-->
+  <div>
+    <p>
+      <select id='btn_sort_options'>
+        <option value='0'>LZM Index</option>
+        <option value='2'>Course_Formats</option>
+        <option value='3'>Language</option>
+        <option value='4'>Date</option>
+        <option value='13'>Consortia</option>
+      </select>
+      <input type='button' value='sort columns' id="btn_sort" />
+    </p>
+  </div>
   <div id="spreadsheet1"></div>
 
-
-  
   <script>
   // Create your spreadsheets
+
+  //Bilingual
   jspreadsheet.setDictionary({
     'No records found': 'Keine Einträge gefunden',
     'Show': 'Anzeigen',
-    //...
   });
 
-  jspreadsheet(document.getElementById('spreadsheet1'), {
+  let table = jspreadsheet(document.getElementById('spreadsheet1'), {
     toolbar: true,
     worksheets: [
         {
@@ -3333,12 +3347,96 @@
             }
             ],
             columns:[
-              
-            ]
+              { 
+                type: 'dropdown',
+                title: "LZM_Topics", 
+                width: '90px',
+                source: [
+                 'Basic data terms and significance of research data management (RDM)',
+                 'Issues in research data management (RDM)',
+                 'People and roles in research data management (RDM)',
+                 'Research data management (RDM)-policies',
+                 'Research data life cycle',
+                 'Data management plan',
+                 'FAIR-principles',
+                 'Open Science (Data, Source, etc.)',
+                 'Research data management (RDM)-services',
+                 'IT-infrastructures',
+                 'Basic terms',
+                 'Data types',
+                 'Data formats',
+                 'File types',
+                 'File formats',
+                 'File naming',
+                 'Folder structures',
+                 'Versioning',
+                 'Data storage',
+                 'Databases',
+                 'Data integration',
+                 'Data quality',
+                 'Access control',
+                 'Data security',
+                 'Programming',
+                 'Data collection',
+                 'Data analysis',
+                 'Data documentation',
+                 'Metadata',
+                 'Metadata standard',
+                 'Persistent identifier',
+                 'Vocabulary',
+                 'Taxonomy',
+                 'Ontology',
+                 'Archiving',
+                 'Long-term preservation',
+                 'Data publication',
+                 'Repositories',
+                 'Reuse',
+                 'General legal aspects',
+                 'Copyright law',
+                 'Licencing',
+                 'Data availability statement',
+                 'Data protection',
+                 'Personal data',
+                 'Informed consent',
+                 'Anonymisation and pseudonymisation',
+                 'Trade Secrets Law',
+                 'Discipline relevant laws',
+                 'Good scientific practice',
+                 'CARE principles',
+                 'Ethics',
+                 'Ethics committee',
+                 'Field specific ethics',
+                 'Didactics',
+                 'Evaluation',
+                 'Feedback',
+                 'Consultancy',
+                 'Moderation',
+                 'Organizational development',
+                 'Project management',
+                 'Change management'
+                ]
+              },
+              {title: "Title_Unit"},
+              {title: "Course_Formats"},
+              {title: "Language", width: '30px'},
+              {title: "Date", width: '50px'},
+              {title: "Version", width: '50px'},
+              {title: "License"},
+              {title: "RDMT_Profiency_Level"},
+              {title: "Target_group_as_stated"},
+              {title: "LZM_Learning_Objective", width: '95px'},
+              {title: "Learning_Objective_as_stated"},
+              {title: "Learning_Ressource"},
+              {title: "PID_URL"},
+              {title: "Consortia"}
+            ],
+            defaultColWidth: '130px',
+            filters: true,
         },
         // More worksheets
     ]
   });
+  document.getElementById("btn_sort").onclick = (e) => table[0].orderBy(e.target.previousElementSibling.value);
   </script>
 </body>
 </html>
