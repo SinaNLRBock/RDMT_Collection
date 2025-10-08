@@ -3,15 +3,17 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <!-- <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
+  <div>
+    <p>Collection (simplified)</p>
+    <a href="./collection/index.html" target="_self">
+      <img src="/RDMTraining4NFDI.png" class="logo" alt="RDMT logo" />
     </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+    <p>Collection (extended)</p>
+    <a href="./collection/index_extended.html" target="_self">
+      <img src="./assets/RDMTraining4NFDI.png" class="logo vue" alt="RDMT logo" />
     </a>
-  </div> -->
-  <HelloWorld msg="RDMT Collection" />
+  </div>
+  <HelloWorld msg="Hello from RDMT" />
 </template>
 
 <style scoped>

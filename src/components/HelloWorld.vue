@@ -13,7 +13,7 @@ const count = ref(0)
 
   <div class="card">
     <p>
-      Hello from RDMT
+      Click on an image to access different views on the RDMT Collection
     </p>
   </div>
 </template>
