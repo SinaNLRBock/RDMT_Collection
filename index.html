@@ -6,7 +6,7 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-   <!-- import jspreadsheet v5-->
+   <!-- importjspreadsheet v5-->
   <script src="https://bossanova.uk/jspreadsheet/v5/jspreadsheet.js"></script>
   <script src="https://jsuites.net/v5/jsuites.js"></script>
 
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v5/jspreadsheet.css" type="text/css" />
   <link rel="stylesheet" href="https://jsuites.net/v5/jsuites.css" type="text/css" />
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" /> 
 
   <title>RDMT Collection</title>
 </head>
@@ -3360,7 +3360,8 @@
               { 
                 type: 'dropdown',
                 title: "LZM_Topics", 
-                width: '90px',
+                tooltip: 'This is the LZM Topic',
+                width: '200',
                 source: [
                  'Basic data terms and significance of research data management (RDM)',
                  'Issues in research data management (RDM)',
@@ -3426,33 +3427,36 @@
                  'Change management'
                 ]
               },
-              {title: "Title_Unit"},
+              {title: "Title_Unit", width: '120',},
               {title: "Course_Formats"},
               {
                 type: 'dropdown',
                 title: "Language", 
-                width: '30px',
+                width: '30',
                 source: ['en', 'de', 'fr', 'es', 'nl', 'multi']
               },
               {
                 title: "Date", 
-                width: '50px'
+                width: '50'
               },
-              {title: "Version", width: '50px'},
-              {title: "License"},
-              {title: "RDMT_Profiency_Level"},
+              {title: "Version", width: '50'},
+              {title: "License", width: '110'},
+              {title: "RDMT_Profiency_Level", width: '90'},
               {title: "Target_group_as_stated"},
-              {title: "LZM_Learning_Objective", width: '95px'},
+              {title: "LZM_Learning_Objective", width: '95'},
               {title: "Learning_Objective_as_stated"},
-              {title: "Learning_Ressource"},
+              {title: "Learning_Ressource", width: '90',},
               {title: "PID_URL"},
               {title: "Consortia"}
             ],
-            defaultColWidth: '130px',
+            defaultColWidth: '130',
+            defaultColAlign: 'justifyleft',
             filters: true,
+            pagination: '50',
+            //paginationOptions: [10,25,50,100]
         },
         // toDo: add more worksheets
-    ]
+    ],
   });
   // sort
   document.getElementById("btn_sort").onclick = (e) => table[0].orderBy(e.target.previousElementSibling.value);
