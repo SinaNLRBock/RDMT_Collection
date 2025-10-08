@@ -2,25 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <!-- toDo: update icon?-->
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+   <!-- import jspreadsheet v5-->
   <script src="https://bossanova.uk/jspreadsheet/v5/jspreadsheet.js"></script>
   <script src="https://jsuites.net/v5/jsuites.js"></script>
+
+  <!-- import jspreadsheet v5 style : not working?-->
   <link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v5/jspreadsheet.css" type="text/css" />
   <link rel="stylesheet" href="https://jsuites.net/v5/jsuites.css" type="text/css" />
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+
   <title>RDMT Collection</title>
 </head>
-
 <body>
-  <!-- <div id="app"></div>
-    <script type="module" src="/src/main.js"></script> -->
   <div>
-    <p>RDMt Collection</p>
+    <p>RDMTraining4NFDI Collection</p>
+    <p>current state: work in progress <br> version: 0.0.1; <br> date: 2025-10</p>
   </div>
-  <!-- Sort-->
+  <!-- sort-->
   <div>
     <p>
       <select id='btn_sort_options'>
@@ -36,14 +39,21 @@
   <div id="spreadsheet1"></div>
 
   <script>
-  // Create your spreadsheets
+  
+//~~~~~~~~ Create collection ~~~~~~~~~
 
-  //Bilingual
+  //toDo: bilingual
   jspreadsheet.setDictionary({
     'No records found': 'Keine Einträge gefunden',
     'Show': 'Anzeigen',
   });
 
+  // toDo: controlled: proficiency , course_formats, license, learning_ressource, 
+  // toDo: overlay, translation: lzm_topics, lzm_objects
+  // toDo: fix export
+  // toDo: add sheets for references
+  // toDo: default style
+  // toDo: check/prettyfy data input
   let table = jspreadsheet(document.getElementById('spreadsheet1'), {
     toolbar: true,
     worksheets: [
@@ -3418,8 +3428,16 @@
               },
               {title: "Title_Unit"},
               {title: "Course_Formats"},
-              {title: "Language", width: '30px'},
-              {title: "Date", width: '50px'},
+              {
+                type: 'dropdown',
+                title: "Language", 
+                width: '30px',
+                source: ['en', 'de', 'fr', 'es', 'nl', 'multi']
+              },
+              {
+                title: "Date", 
+                width: '50px'
+              },
               {title: "Version", width: '50px'},
               {title: "License"},
               {title: "RDMT_Profiency_Level"},
@@ -3433,9 +3451,10 @@
             defaultColWidth: '130px',
             filters: true,
         },
-        // More worksheets
+        // toDo: add more worksheets
     ]
   });
+  // sort
   document.getElementById("btn_sort").onclick = (e) => table[0].orderBy(e.target.previousElementSibling.value);
   </script>
 </body>
