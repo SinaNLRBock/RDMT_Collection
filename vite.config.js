@@ -6,13 +6,4 @@ import { resolve } from 'path'
 export default defineConfig({
   base: "/RDMT_Collection/",
   plugins: [vue()],
-
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        nested: resolve(__dirname, 'collection/index.html'),
-      },
-    },
-  },
 })
