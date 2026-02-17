@@ -238,11 +238,11 @@ var minMaxFilterEditor = function(cell, onRendered, success, cancel, editorParam
 	];
 
 	var table = new Tabulator("#example-table", {
-	    height:400, // set height of table (optional)
+	    height:600, // set height of table (optional)
 	    data:tabledata,
 	    layout:"fitColumns",
         resizableColumnFit:true,
-        //responsiveLayout:"hide",
+        responsiveLayout:"hide",
         renderHorizontal:"virtual",
         rowHeader:{formatter:"rownum", headerSort:false, hozAlign:"center", resizable:true, frozen:true},
         //frozenRows:0,
