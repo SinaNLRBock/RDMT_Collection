@@ -14,18 +14,15 @@
   <link rel="stylesheet" href="https://jsuites.net/v5/jsuites.css" type="text/css" />
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" />
-  </head>
-  <body>
+  <link href="https://unpkg.com/tabulator-tables@6.3.1/dist/css/tabulator.min.css" rel="stylesheet">
 
-    <div id="intro" class="intro">
+<div id="intro" class="intro">
 <link href="dist/css/tabulator.css" rel="stylesheet">
 <script type="text/javascript" src="dist/js/tabulator.js"></script>
 
-  <title>RDMT Collection</title>
 </head>
-<body>
 
-<link href="https://unpkg.com/tabulator-tables@6.3.1/dist/css/tabulator.min.css" rel="stylesheet">
+
 <script type="text/javascript" src="https://unpkg.com/tabulator-tables@6.3.1/dist/js/tabulator.min.js"></script>
 <script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
 
@@ -238,31 +235,31 @@ var minMaxFilterEditor = function(cell, onRendered, success, cancel, editorParam
 	];
 
 	var table = new Tabulator("#example-table", {
-	    height:400, // set height of table (optional)
+	    // height:600,
 	    data:tabledata,
 	    layout:"fitColumns",
         resizableColumnFit:true,
-        //responsiveLayout:"hide",
+       // responsiveLayout:"hide",
         renderHorizontal:"virtual",
         rowHeader:{formatter:"rownum", headerSort:false, hozAlign:"center", resizable:true, frozen:true},
         //frozenRows:0,
 	    columns:[ //Define Table Columns
 	    {title:"LZM_Index", field:"LZM_Index", sorter:"string", width:100, frozen:true, editor:"input", headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}},
-        {title:"Title_Unit", field:"Title_Unit", sorter:"string", width:100, frozen:true},
+        {title:"Title_Unit", field:"Title_Unit", sorter:"string", width:200, frozen:true},
         {title:"Course_Formats", field:"Course_Formats", sorter:"string", width:100},
         {title:"Language", field:"Language", sorter:"string", width:20},
         {title:"Date", field:"Date", sorter:"string", width:50, editor:"input", headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}},
-        {title:"Version", field:"Version", sorter:"string"},
+        {title:"Version", field:"Version", sorter:"string", width:50},
         {title:"License", field:"License", width:100, sorter:"string"},
         {title:"RDMT_Proficiency_Level", field:"RDMT_Proficiency_Level", width:100, sorter:"string", editor:"input", headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}},
-        {title:"Target_group_as_stated", field:"Target_group_as_stated", sorter:"string"},
-        {title:"LZM_Learning_Objective", field:"LZM_Learning_Objective", width:100, sorter:"string", },
-        {title:"Learning_Ressource", field:"Learning_Ressource", sorter:"string", width:10},
-        {title:"PID_URL", field:"PID_URL", sorter:"string", width:10},
+        {title:"Target_group_as_stated", field:"Target_group_as_stated", sorter:"string", width:100},
+        {title:"LZM_Learning_Objective", field:"LZM_Learning_Objective", width:100, sorter:"string" },
+        {title:"Learning_Ressource", field:"Learning_Ressource", sorter:"string", width:100},
+        {title:"PID_URL", field:"PID_URL", sorter:"string", width:100},
         {title:"Consortia", field:"Consortia", width:100, sorter:"string", editor:"input", headerFilter:"list", headerFilterParams:{valuesLookup:true, clearable:true}},
         {title:"Learning_Methods", field:"Learning_Methods", sorter:"string"},
         {title:"Acessibility", field:"Acessibility", sorter:"tick", hozAlign:"left", formatter:"tickCross"},
-        {title:"FAIR", field:"FAIR", sorter:"number", hozAlign:"left", formatter:"star"},
+        {title:"FAIR", field:"FAIR", sorter:"number", hozAlign:"left", formatter:"star", width:100},
         {title:"Duration", field:"Duration", sorter:"string", width:50},
         {title:"P_Libraries", field:"P_Libraries", sorter:"string", width:100},
         {title:"P_Language", field:"P_Language", sorter:"string", width:100},
@@ -274,9 +271,9 @@ var minMaxFilterEditor = function(cell, onRendered, success, cancel, editorParam
 	});
 
 	//trigger an alert message when the row is clicked
-	table.on("rowClick", function(e, row){ 
-		alert("Row " + row.getData().id + " Clicked!!!!");
-	});
+	//table.on("rowClick", function(e, row){ 
+	//	alert("Row " + row.getData().id + " Clicked!!!!");
+	//});
 </script>
 
 
@@ -309,6 +306,5 @@ var minMaxFilterEditor = function(cell, onRendered, success, cancel, editorParam
 }
 </style>
 
-  </body>
-</html>
+
 </html>
